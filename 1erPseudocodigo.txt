@@ -1,0 +1,36 @@
+Lo que se me ocurrio fue asi:
+
+-En un arreglo tener las opciones que se pueden elegir (M, C, M M, C C, M C)
+-Una lista que sera el lado derecho de un puente, esta ya debera tener el acomodo inicial (M M M C C C)
+-Otra lista que sera el lado izquierdo del puente
+-Aleatoriamente elegir una opcion, pasar la opcion al lado izquierdo 
+-Un bucle (ganar == false)
+	-Preguntar de que lado se esta (derecho o izquierdo)
+		//////es que se esta del lado izquierdo\\\\\\\\
+		-Hacer suma o resta de canibales y monjes dependiendo de la opcion
+		-Si ya se ha perdido (if C > M)
+			-Almacenar en una estructura el mal camino (arreglo de estructura) 
+			-Inicializar el lado izquierdo
+			-Eliminamos opcion mala del arreglo de opciones, habria que hacer una copia para no perder esas opciones por que siempre se ocuparan
+			-Poner que se esta del lado derecho, inicializar
+			-Aleatoriamente elegir una opcion, pasar la opcion al lado izquierdo 
+		-Si no
+			-Almacenar en otra estructura el buen camino
+			-Aleatoriamente elegir una opcion, pasar la opcion al lado derecho  
+		
+	-lado derecho
+		-Hacer suma o resta de canibales y monjes dependiendo de la opcion	
+		-Si ya se ha perdido (if C > M)
+			-Almacenar en una estructura el mal camino (arreglo de estructura)
+			-Inicializar el lado izquierdo
+			-Eliminamos opcion mala del arreglo de opciones, habria que hacer una copia para no perder esas opciones por que siempre se ocuparan
+			-Poner que se esta del lado derecho, inicializar
+			-Aleatoriamente elegir una opcion, pasar la opcion al lado izquierdo
+		-Si no
+			-Almacenar en otra estructura el buen camino
+			-Aleatoriamente elegir una opcion, pasar la opcion al lado derecho
+
+	-Preguntar si la lista del lado izquierdo esta llena (M M M C C C) 
+		-Romper bucle ganar = true
+	-Si no
+		-Que siga el bucle  
