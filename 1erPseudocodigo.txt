@@ -12,8 +12,6 @@ Lo que se me ocurrio fue asi:
 			-Almacenar en una estructura el mal camino (arreglo de estructura) 
 			-Inicializar el lado izquierdo
 			-Eliminamos opcion mala del arreglo de opciones, habria que hacer una copia para no perder esas opciones por que siempre se ocuparan
-			-Poner que se esta del lado derecho, inicializar
-			-Aleatoriamente elegir una opcion, pasar la opcion al lado izquierdo 
 		-Si no
 			-Almacenar en otra estructura el buen camino
 			-Aleatoriamente elegir una opcion, pasar la opcion al lado derecho  
@@ -24,8 +22,7 @@ Lo que se me ocurrio fue asi:
 			-Almacenar en una estructura el mal camino (arreglo de estructura)
 			-Inicializar el lado izquierdo
 			-Eliminamos opcion mala del arreglo de opciones, habria que hacer una copia para no perder esas opciones por que siempre se ocuparan
-			-Poner que se esta del lado derecho, inicializar
-			-Aleatoriamente elegir una opcion, pasar la opcion al lado izquierdo
+			
 		-Si no
 			-Almacenar en otra estructura el buen camino
 			-Aleatoriamente elegir una opcion, pasar la opcion al lado derecho
