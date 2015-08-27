@@ -1,0 +1,27 @@
+Primero pongo la solucion que hizo yinkles
+
+
+M M M C C C
+			---> C C
+M M M C    		 		C C
+			<--- C
+M M M C C				C
+			---> C C
+M M M					C C C
+			<--- C
+M M M C					C C
+			---> M M
+M C						M M C C
+			<--- M C
+M M C C					M C
+			---> M M
+C C						M M M C
+			<--- C
+C C C					M M M
+			---> C C
+C						M M M C C
+			<--- C
+C C 					M M M C
+			---> C
+						M M M C C C
+
