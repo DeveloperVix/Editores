@@ -1,31 +1,31 @@
 Lo que se me ocurrio fue asi:
 
 -En un arreglo tener las opciones que se pueden elegir (M, C, M M, C C, M C)
--Una lista que sera el lado derecho de un puente, esta ya debera tener el acomodo inicial (M M M C C C)
--Otra lista que sera el lado izquierdo del puente
--Aleatoriamente elegir una opcion, pasar la opcion al lado izquierdo 
+-Una lista que sera el lado izquierdo de un puente, esta ya debera tener el acomodo inicial (M M M C C C)
+-Otra lista que sera el lado derecho del puente
+-Aleatoriamente elegir una opcion, pasar la opcion al lado derecho 
 -Un bucle (ganar == false)
 	-Preguntar de que lado se esta (derecho o izquierdo)
-		//////es que se esta del lado izquierdo\\\\\\\\
+		//////es que se esta del lado derecho\\\\\\\\
 		-Hacer suma o resta de canibales y monjes dependiendo de la opcion
 		-Si ya se ha perdido (if C > M)
 			-Almacenar en una estructura el mal camino (arreglo de estructura) 
-			-Inicializar el lado izquierdo
+			-Inicializar el lado derecho
 			-Eliminamos opcion mala del arreglo de opciones, habria que hacer una copia para no perder esas opciones por que siempre se ocuparan
-			-Poner que se esta del lado derecho, inicializar
-			-Aleatoriamente elegir una opcion, pasar la opcion al lado izquierdo 
+			-Poner que se esta del lado izquierdo, inicializar
+			-Aleatoriamente elegir una opcion, pasar la opcion al lado derecho 
 		-Si no
 			-Almacenar en otra estructura el buen camino
-			-Aleatoriamente elegir una opcion, pasar la opcion al lado derecho  
+			-Aleatoriamente elegir una opcion, pasar la opcion al lado izquierdo  
 		
-	-lado derecho
+	-lado izquierdo
 		-Hacer suma o resta de canibales y monjes dependiendo de la opcion	
 		-Si ya se ha perdido (if C > M)
 			-Almacenar en una estructura el mal camino (arreglo de estructura)
-			-Inicializar el lado izquierdo
+			-Inicializar el lado derecho
 			-Eliminamos opcion mala del arreglo de opciones, habria que hacer una copia para no perder esas opciones por que siempre se ocuparan
-			-Poner que se esta del lado derecho, inicializar
-			-Aleatoriamente elegir una opcion, pasar la opcion al lado izquierdo
+			-Poner que se esta del lado izquierdo, inicializar
+			-Aleatoriamente elegir una opcion, pasar la opcion al lado derecho
 		-Si no
 			-Almacenar en otra estructura el buen camino
 			-Aleatoriamente elegir una opcion, pasar la opcion al lado derecho
