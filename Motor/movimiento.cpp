@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <iostream>
 
-using namespace std;
+using namespace std;//comentando jeje
 
 class Movimiento{
 private:
