@@ -14,7 +14,7 @@ private:
 	int color[4];//RGBA
 	string etiqueta;
 	bool precargaArte;
-	Movimiento g;
+	Movimiento mov;
 
 public:
 
@@ -147,10 +147,10 @@ bool Atributos::getPrecargaArte(){
 
 void Atributos::VerAtributos(){
 	//imprimir todos los atributos
+	mov.VerAtributos();
 }
 
 int main(){
 	Atributos actorParte_1;
-	Movimiento actorParte_2;
 	return 0;
 }
