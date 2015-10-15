@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <iostream>
 
-using namespace std;//comentando jeje
+using namespace std;
 
 class Movimiento{
 private:
@@ -27,8 +27,6 @@ public:
 	void setAplicaMaxVel(bool);
 	bool getAplicaMaxVel();
 	
-	void VerAtributos();
-	
 };
 
 Movimiento::Movimiento(){
@@ -37,7 +35,6 @@ Movimiento::Movimiento(){
 	velocidadMaxima = 0;
 	aplicaMaxVelocidad = false;
 	
-	VerAtributos();
 }
 
 void Movimiento::setVelLineal(int X, int Y){
