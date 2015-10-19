@@ -55,7 +55,7 @@ public:
 
 Atributos::Atributos(){
 	contador = 1;
-	nombre = "Actor 1";
+	nombre = "Actor";
 	posicion[0] = posicion[1] = 0;
 	tamanio[0] = tamanio[1] = 100;
 	rotacion = 0;
@@ -149,7 +149,7 @@ bool Atributos::getPrecargaArte(){
 
 void Atributos::VerAtributos(){
 	//imprimir todos los atributos
-	cout<<"Nombre:        "<< getNombre()<<endl;
+	cout<<"Nombre:        "<< getNombre()<<contador<<endl;
 	cout<<"Posicion:    X "<< getPosicionX()<<" Y "<< getPosicionY()<<endl;
 	cout<<"Tamanio: Ancho "<<getTamanioAncho()<<" Largo "<< getTamanioLargo()<<endl;
 	cout<<"Rotacion:      "<<getRotacion()<<endl;
