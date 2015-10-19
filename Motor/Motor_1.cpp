@@ -14,6 +14,7 @@ private:
 	int color[4];//RGBA
 	string etiqueta;
 	bool precargaArte;
+	
 	Movimiento mov;
 
 public:
@@ -47,13 +48,14 @@ public:
 	bool getPrecargaArte();
 	
 	void VerAtributos();
+
 };
 
 
 
 Atributos::Atributos(){
 	contador = 1;
-	nombre = "Actor ";
+	nombre = "Actor 1";
 	posicion[0] = posicion[1] = 0;
 	tamanio[0] = tamanio[1] = 100;
 	rotacion = 0;
@@ -147,10 +149,18 @@ bool Atributos::getPrecargaArte(){
 
 void Atributos::VerAtributos(){
 	//imprimir todos los atributos
+	cout<<"Nombre:        "<< getNombre()<<endl;
+	cout<<"Posicion:    X "<< getPosicionX()<<" Y "<< getPosicionY()<<endl;
+	cout<<"Tamanio: Ancho "<<getTamanioAncho()<<" Largo "<< getTamanioLargo()<<endl;
+	cout<<"Rotacion:      "<<getRotacion()<<endl;
+	cout<<"Color:       R "<<getColorR()<<" G "<<getColorG()<<" B "<<getColorB()<<" A "<<getColorA()<<endl;
+	cout<<"Etiqueta:      "<<getEtiqueta()<<endl;
+	cout<<"Precarga Arte: "<<getPrecargaArte()<<endl;
+	
 	mov.VerAtributos();
 }
 
 int main(){
-	Atributos actorParte_1;
+	Atributos actor;
 	return 0;
 }
