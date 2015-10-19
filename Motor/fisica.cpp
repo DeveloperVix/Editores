@@ -13,6 +13,8 @@ private:
 	bool fixRotacion;
 	bool movil;
 	int arrastre;
+
+	Fisica fis;
 public:
 	
 	Fisica();
@@ -40,6 +42,8 @@ public:
 	
 	void setArrastre(int);
 	int getArrastre();
+
+	void verAtributos();
 };
 
 Fisica::Fisica(){
@@ -51,6 +55,8 @@ Fisica::Fisica(){
 	fixRotacion = false;
 	movil = false;
 	arrastre = 0;
+
+	verAtributos();
 }
 
 void Fisica::setDensidad(int m, int V){
@@ -109,4 +115,15 @@ void Fisica::setArrastre(int arra){
 	
 int Fisica::getArrastre(){
 	return arrastre;
+}
+
+void Fisica::verAtributos(){
+	cout<<"Densidad: "<<getMasa()/getVolumen()<<endl;
+	cout<<"Friccion: "<<getFueNormal()*getCoeFriccion()<<endl;
+	cout<<"Rebote: "<<getRebote()<<endl;
+	cout<<"Rotacion Arreglada: "<<getFixRotation<<endl;
+	cout<<"Movimiento: "<<getMovil<<endl;
+	cout<<"Fuerza de Arrastre: "<<getArrastre<<endl;
+
+	fis.verAtributos();
 }
