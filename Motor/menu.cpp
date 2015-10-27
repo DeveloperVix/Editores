@@ -10,6 +10,7 @@ class MotorM{
 public:
 	Atributos actorAtri[11];
 	Movimiento actorMov[11];
+	//Hay que crear los demas arreglos de fisica y graficos
 	MotorM();
 	
 	void menu();
@@ -43,7 +44,7 @@ void MotorM::CrearActor(){
 		actorMov[contador].setVelMaxima(0);
 		actorMov[contador].setAplicaMaxVel(0);
 	
-		//poner los sets de las otras clases
+		//poner los sets de las otras clases, fisica y graficos
 		
 		contador++;
 		cout<<"\nActor Creado!!\n"<<endl;
@@ -68,7 +69,7 @@ void MotorM::VerAtributos(int contador){
 	cout<<"Velocidad Maxima: "<< actorMov[contador].getVelMaxima()<<endl;
 	cout<<"Aplicar velocidad maxima: "<< actorMov[contador].getAplicaMaxVel()<<endl<<endl;
 	
-	//imprimir los demas atributos
+	//imprimir los demas atributos utilizando los get, fisica y graficos
 }
 
 void MotorM::NumActores(){
@@ -88,6 +89,7 @@ void MotorM::menu(){
 	cout<<"1. Ver numero de Actores"<<endl;
 	cout<<"2. Ver Actor"<<endl;
 	cout<<"3. Crear nuevo Actor"<<endl;
+	//Poner opcion para modificar atributos y tambien en el switch
 	cout<<"4. Salir"<<endl;
 	cin>> n;
 	
