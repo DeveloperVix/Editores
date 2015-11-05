@@ -31,7 +31,6 @@ public:
 	void setFlipVertical(int);
 	int getFlipVertical();
 
-	void verAtributos();
 };
 
 Graficos::Graficos(){
@@ -43,12 +42,11 @@ Graficos::Graficos(){
 	int wrap=0; //0=stretch 1=fixed 2..etc
 	int tileAncho=32;
 	int tileAlto=32;
-	verAtributos();
 }
 
 void Graficos::setVisible(int vis){
-	printf("Es visible? (1=true, 0=false) \n");
-	scanf("%d", &vis);
+	//printf("Es visible? (1=true, 0=false) \n");
+	//scanf("%d", &vis);
 	visible=vis;
 }
 
@@ -57,8 +55,8 @@ int Graficos::getVisible(){
 }
 
 void Graficos::setOffsetX(int offX){
-	printf("Offset X: \n");
-	scanf("%d", &offX);
+	//printf("Offset X: \n");
+	//scanf("%d", &offX);
 	offsetX=offX;
 }
 
@@ -67,8 +65,8 @@ int Graficos::getOffsetX(){
 }
 
 void Graficos::setOffsetY(int offY){
-	printf("Offset Y: \n");
-	scanf("%d", &offY);
+	//printf("Offset Y: \n");
+	//scanf("%d", &offY);
 	offsetY=offY;
 }
 
@@ -77,33 +75,22 @@ int Graficos::getOffsetY(){
 }
 
 
-void setFlipHorizontal(int invH){
-	printf("Invertido Horizontalmente? (1=true, 0=false) \n");
-	scanf("%d", &invH);
+void Graficos::setFlipHorizontal(int invH){
+	//printf("Invertido Horizontalmente? (1=true, 0=false) \n");
+	//scanf("%d", &invH);
 	flipHorizontal=invH;
 }
 
-int getFlipHorizontal(){
+int Graficos::getFlipHorizontal(){
 	return flipHorizontal;
 }
 
-void setFlipVertical(int invV){
-	printf("Invertido Verticalmente? (1=true, 0=false) \n");
-	scanf("%d", &invV);
+void Graficos::setFlipVertical(int invV){
+	//printf("Invertido Verticalmente? (1=true, 0=false) \n");
+	//scanf("%d", &invV);
 	flipVertical=invV;
 }
 
-int getFlipVertical(){
+int Graficos::getFlipVertical(){
 	return flipVertical;
 }
-
-
-/*void Graficos::verAtributos(){
-	if(getVisible==0){
-	printf("Visible: Falso");
-	}else{
-	printf("Visible: Verdadero");
-	}
-
-	graphs.verAtributos();
-}*/
