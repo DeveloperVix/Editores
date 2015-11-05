@@ -1,6 +1,7 @@
 #include <iostream>
 //#include "fisica.cpp"
 #include "movimiento.cpp"
+#include "graficos.cpp"
 #include "Motor_1.cpp"
 #include <stdlib.h>
 
@@ -10,6 +11,7 @@ class MotorM{
 public:
 	Atributos actorAtri[11];
 	Movimiento actorMov[11];
+	Graficos actorGra[11];
 	//Hay que crear los demas arreglos de fisica y graficos
 	MotorM();
 	
@@ -43,6 +45,12 @@ void MotorM::CrearActor(){
 		actorMov[contador].setVelAngular(0);
 		actorMov[contador].setVelMaxima(0);
 		actorMov[contador].setAplicaMaxVel(0);
+		
+		actorGra[contador].setVisible(1);
+		actorGra[contador].setOffsetX(5);
+		actorGra[contador].setOffsetY(5);
+		actorGra[contador].setFlipHorizontal(0);
+		actorGra[contador].setFlipVertical(0);
 	
 		//poner los sets de las otras clases, fisica y graficos
 		
@@ -68,6 +76,12 @@ void MotorM::VerAtributos(int contador){
 	cout<<"Velocidad Angular: "<< actorMov[contador].getVelAngular()<<endl;
 	cout<<"Velocidad Maxima: "<< actorMov[contador].getVelMaxima()<<endl;
 	cout<<"Aplicar velocidad maxima: "<< actorMov[contador].getAplicaMaxVel()<<endl<<endl;
+	
+	cout<<endl<<"------- Graficos -------\n"<<endl;
+	cout<<"Visible:  "<< actorGra[contador].getVisible()<<" (0=false 1=true) "<<endl;
+	cout<<"Offset: X"<< actorGra[contador].getOffsetX()<<" Y"<<actorGra[contador].getOffsetY()<<endl;
+	cout<<"Flip: Horizontal "<< actorGra[contador].getFlipHorizontal()<<" Vertical "<<actorGra[contador].getFlipVertical()<<endl;
+
 	
 	//imprimir los demas atributos utilizando los get, fisica y graficos
 }
