@@ -1,12 +1,10 @@
 #include <stdlib.h>
 #include <iostream>
-#include "movimiento.cpp"
 
 using namespace std;
 
 class Atributos{
 private:
-	int contador;
 	string nombre;
 	int posicion[2];//posicion x,y
 	int tamanio[2];//largo, ancho
@@ -14,12 +12,10 @@ private:
 	int color[4];//RGBA
 	string etiqueta;
 	bool precargaArte;
-	Movimiento g;
+	
 
 public:
-
-	Atributos();
-
+	
 	void setNombre(string);
 	string getNombre();
 	
@@ -45,24 +41,9 @@ public:
 	
 	void setPrecargaArte(bool);
 	bool getPrecargaArte();
-	
-	void VerAtributos();
+
 };
 
-
-
-Atributos::Atributos(){
-	contador = 1;
-	nombre = "Actor ";
-	posicion[0] = posicion[1] = 0;
-	tamanio[0] = tamanio[1] = 100;
-	rotacion = 0;
-	color[0] = color[1] = color[2] = color[3] = 1;
-	etiqueta = "";
-	precargaArte = true;
-	
-	VerAtributos();
-}
 
 void Atributos::setNombre(string nom){
 	nombre = nom;
@@ -145,12 +126,8 @@ bool Atributos::getPrecargaArte(){
 	return precargaArte;
 }
 
-void Atributos::VerAtributos(){
-	//imprimir todos los atributos
-}
 
+/*
 int main(){
-	Atributos actorParte_1;
-	Movimiento actorParte_2;
 	return 0;
-}
+}*/

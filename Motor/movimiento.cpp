@@ -12,8 +12,6 @@ private:
 
 public:
 	
-	Movimiento();
-	
 	void setVelLineal(int,int);
 	int getVelLinealX();
 	int getVelLinealY();
@@ -27,18 +25,9 @@ public:
 	void setAplicaMaxVel(bool);
 	bool getAplicaMaxVel();
 	
-	void VerAtributos();
 	
 };
 
-Movimiento::Movimiento(){
-	velocidadLineal[0] = velocidadLineal[1] = 0;
-	velocidadAngular = 0;
-	velocidadMaxima = 0;
-	aplicaMaxVelocidad = false;
-	
-	VerAtributos();
-}
 
 void Movimiento::setVelLineal(int X, int Y){
 	velocidadLineal[0] = X;
@@ -77,11 +66,8 @@ bool Movimiento::getAplicaMaxVel(){
 	return aplicaMaxVelocidad;
 }
 
-void Movimiento::VerAtributos(){
-	//imprimir atributos
-}
-
 /*
 int main(){
 	return 0;
-}*/
+}
+*/

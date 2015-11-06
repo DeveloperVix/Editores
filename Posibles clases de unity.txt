@@ -1,0 +1,35 @@
+Como funciona Unity
+
+clase crear objeto 3d
+	clase cubo
+		subclase transform
+		atributo collider (box, sphere, etc)
+		subclase Mesh Renderer
+		atributo material
+	clase esfera
+	etc.
+
+clase crear objeto 2d
+	clase sprite
+		sublcase transform
+		subclase spriteRender
+
+clase añadir componentes
+	clase mesh
+		sublclase mesh filter
+		sublclase text mesh
+	clase efectos
+		subclase sistema particulas
+		etc
+	clase fisicas
+		subclase rigidbody
+		subclase colliders
+		etc
+	clase fisicas2D
+		subclase rigidbody2d
+		subclase colliders
+		etc
+
+clase camara motor
+
+	

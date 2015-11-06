@@ -1,0 +1,5 @@
+clase jugador (Nombre, Score, #Barco)
+clase movimiento (Disparo, Casilla atacada, Checar barco tamaño, Manda score)
+clase tablero (Metodo de mensaje<#de barcos ganar>, Crear tablero, Posicion de barcos, Casilla marcada)
+clase menu (poner ubicacion de barcos en el tablero)
+
