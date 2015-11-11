@@ -12,7 +12,7 @@ public:
 	Atributos actorAtri[11];
 	Movimiento actorMov[11];
 	Graficos actorGra[11];
-	//Hay que crear los demas arreglos de fisica y graficos
+	//Hay que crear los demas arreglos de fisica
 	MotorM();
 	
 	void menu();
@@ -20,6 +20,7 @@ public:
 	void CrearActor();
 	void VerAtributos(int);
 	void NumActores();
+	void ModificarAtributos(int);
 	
 private:
 	
@@ -52,7 +53,7 @@ void MotorM::CrearActor(){
 		actorGra[contador].setFlipHorizontal(0);
 		actorGra[contador].setFlipVertical(0);
 	
-		//poner los sets de las otras clases, fisica y graficos
+		//poner los sets de las otras clases, fisica
 		
 		contador++;
 		cout<<"\nActor Creado!!\n"<<endl;
@@ -86,6 +87,42 @@ void MotorM::VerAtributos(int contador){
 	//imprimir los demas atributos utilizando los get, fisica y graficos
 }
 
+void MotorM::ModificarAtributos(int contador){
+	int opAtr = 0;
+	cout<<"Que atributos quiere modificar: "<<endl;
+	cout<<"1. Generales \n2. Movimiento \n3. Graficos \n4. Salir"<<endl;
+	cin>>opAtr;
+	
+	switch(opAtr){
+	case 1:
+		int opGral = 0; //int posN = 0; int tamN = 0;int rotN = 0; int colN = 0;
+		string nomN, etiN;
+		//bool precargaN;
+		cout<<"Nombre:        "<< actorAtri[contador].getNombre()<<contador<<endl;
+		cout<<"Posicion:    X "<< actorAtri[contador].getPosicionX()<<" Y "<< actorAtri[contador].getPosicionY()<<endl;
+		cout<<"Tamanio: Ancho "<< actorAtri[contador].getTamanioAncho()<<" Largo "<< actorAtri[contador].getTamanioLargo()<<endl;
+		cout<<"Rotacion:      "<< actorAtri[contador].getRotacion()<< endl;
+		cout<<"Color:       R "<< actorAtri[contador].getColorR()<<" G "<< actorAtri[contador].getColorG()<<" B "<< actorAtri[contador].getColorB()<<" A "<< actorAtri[contador].getColorA()<<endl;
+		cout<<"Etiqueta:      "<< actorAtri[contador].getEtiqueta()<<endl;
+		cout<<"Precarga Arte: "<< actorAtri[contador].getPrecargaArte()<<endl;
+		
+		cout<<"1. Nombre \n2. Posicion \n3. Tamanio \n4. Rotacion \n5. Color\n6. Etiqueta\n7. Precarga Arte \n8. Regresar"<<endl;
+		cin>> opGral;
+		
+		if(opGral == 1){
+			cout<<"Inserte el nuevo nombre: "<<endl;
+			cin>>nomN;
+		}
+		
+		ModificarAtributos(contador);
+		break;
+		
+	case 4:
+		cout<<"Modificado!!"<<endl;
+		break;
+	}
+}
+
 void MotorM::NumActores(){
 	int i;
 	for(i=1; i < contador; i++){
@@ -103,8 +140,8 @@ void MotorM::menu(){
 	cout<<"1. Ver numero de Actores"<<endl;
 	cout<<"2. Ver Actor"<<endl;
 	cout<<"3. Crear nuevo Actor"<<endl;
-	//Poner opcion para modificar atributos y tambien en el switch
-	cout<<"4. Salir"<<endl;
+	cout<<"4. Modificar atributos"<<endl;
+	cout<<"5. Salir"<<endl;
 	cin>> n;
 	
 	switch(n){
@@ -117,7 +154,7 @@ void MotorM::menu(){
 		int act;
 		cout<<"\nDe cual actor quiere ver sus atributos: "<<endl;
 		NumActores();
-		cout<<endl<<"Introduzca el numero de actor:"<<endl;
+		cout<<endl<<"Introduzca el numero de actor: "<<endl;
 		cin>>act;
 		VerAtributos(act);
 		
@@ -129,6 +166,14 @@ void MotorM::menu(){
 		menu();
 		break;
 	case 4:
+		int ac;
+		cout<<"\n De cual actor quiere modificar sus atributos: "<<endl;
+		NumActores();
+		cout<<endl<<"Introduzca el numero de actor: "<<endl;
+		cin>>ac;
+		ModificarAtributos(ac);
+		break;
+	case 5:
 		exit(0);
 		break;
 		
