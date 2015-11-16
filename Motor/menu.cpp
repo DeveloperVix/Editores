@@ -88,17 +88,18 @@ void MotorM::VerAtributos(int contador){
 }
 
 void MotorM::ModificarAtributos(int contador){
-	int opAtr = 0;
-	cout<<"Que atributos quiere modificar: "<<endl;
+	int opAtr = 0, opGral = 0, posNX = 0, posNY = 0, anchoN = 0, largoN = 0, rotN = 0, RN = 0, GN = 0, BN = 0, AN = 0, precargaN = 0;
+	string nomN, etiN;
+	
+	cout<<"\nQue atributos quiere modificar: "<<endl;
 	cout<<"1. Generales \n2. Movimiento \n3. Graficos \n4. Salir"<<endl;
 	cin>>opAtr;
 	
 	switch(opAtr){
 	case 1:
-		int opGral = 0; //int posN = 0; int tamN = 0;int rotN = 0; int colN = 0;
-		string nomN, etiN;
-		//bool precargaN;
-		cout<<"Nombre:        "<< actorAtri[contador].getNombre()<<contador<<endl;
+		
+		
+		cout<<"\nNombre:        "<< actorAtri[contador].getNombre()<<contador<<endl;
 		cout<<"Posicion:    X "<< actorAtri[contador].getPosicionX()<<" Y "<< actorAtri[contador].getPosicionY()<<endl;
 		cout<<"Tamanio: Ancho "<< actorAtri[contador].getTamanioAncho()<<" Largo "<< actorAtri[contador].getTamanioLargo()<<endl;
 		cout<<"Rotacion:      "<< actorAtri[contador].getRotacion()<< endl;
@@ -106,19 +107,80 @@ void MotorM::ModificarAtributos(int contador){
 		cout<<"Etiqueta:      "<< actorAtri[contador].getEtiqueta()<<endl;
 		cout<<"Precarga Arte: "<< actorAtri[contador].getPrecargaArte()<<endl;
 		
-		cout<<"1. Nombre \n2. Posicion \n3. Tamanio \n4. Rotacion \n5. Color\n6. Etiqueta\n7. Precarga Arte \n8. Regresar"<<endl;
+		cout<<"\nEliga cual atributo a modificar\n1. Nombre \n2. Posicion \n3. Tamanio \n4. Rotacion \n5. Color\n6. Etiqueta\n7. Precarga Arte \n8. Regresar"<<endl;
 		cin>> opGral;
 		
 		if(opGral == 1){
-			cout<<"Inserte el nuevo nombre: "<<endl;
+			cout<<"\nInserte el nuevo nombre:\n"<<endl;
 			cin>>nomN;
+			actorAtri[contador].setNombre(nomN);
+			
+		}else if(opGral == 2){
+			
+			cout<<"\nInserte la posicion X :\n"<<endl;
+			cin>>posNX;
+			cout<<"\nInserte la posicion Y :\n"<<endl;
+			cin>>posNY;
+			actorAtri[contador].setPosicion(posNX, posNY);
+			
+		}else if(opGral == 3){
+			
+			cout<<"\nInserte el ancho:\n"<<endl;
+			cin>>anchoN;
+			cout<<"\nInserte el largo:\n"<<endl;
+			cin>>largoN;
+			actorAtri[contador].setTamanio(anchoN, largoN);
+		
+		}else if(opGral == 4){
+			
+			cout<<"\nInserte la rotacion:\n"<<endl;
+			cin>>rotN;
+			actorAtri[contador].setRotacion(rotN);
+			
+		}else if(opGral == 5){
+			
+			cout<<"\nInserte valor para R:\n"<<endl;
+			cin>>RN;
+			cout<<"\nInserte valor para G:\n"<<endl;
+			cin>>GN;
+			cout<<"\nInserte valor para B:\n"<<endl;
+			cin>>BN;
+			cout<<"\nInserte valor para A:\n"<<endl;
+			cin>>AN;
+			actorAtri[contador].setColor(RN, GN, BN, AN);
+			
+		}else if(opGral == 6){
+		
+			cout<<"\nInserte la nueva etiqueta:\n"<<endl;
+			cin>>etiN;
+			actorAtri[contador].setEtiqueta(etiN);
+			
+		}else if(opGral == 7){
+			
+			cout<<"\nEscriba 0 para false o 1 para true, precargar el arte:\n"<<endl;
+			cin>>precargaN;
+			if(precargaN == 0){
+				actorAtri[contador].setPrecargaArte(false);
+			}else if(precargaN == 1){
+				actorAtri[contador].setPrecargaArte(true);
+			}
+			
 		}
 		
 		ModificarAtributos(contador);
 		break;
 		
+	case 2:
+		
+		break;
+		
+	case 3:
+		
+		break;
+		
 	case 4:
 		cout<<"Modificado!!"<<endl;
+		menu();
 		break;
 	}
 }
