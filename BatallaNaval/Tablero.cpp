@@ -44,7 +44,7 @@ void Tablero::Mensajes(int opcion){
 }
 
 void Tablero::setBarcosPosicion(){
-	int tamanioBarco = 0, Xi = 0, Yi = 0, Xf = 0, Yf = 0;
+	int tamanioBarco = 0, Xi = 0, Yi = 0, Xf = 0, Yf = 0, auxP = 0;
 	cout<<"Tamanio del barco: "<<endl;
 	cin>>tamanioBarco;
 	
@@ -60,6 +60,35 @@ void Tablero::setBarcosPosicion(){
 		cin>>Yf;
 		
 		//definir el for en que direccion (coordenadas), debera asignar el barco
+		
+		if(Xi == Xf){
+			
+			//se suma Y
+			if(Yi < Yf){
+				//for 
+			}else Yi > Yf{
+				auxP = Yf;
+				Yf = Yi;
+				Yi = auxP;
+				//for
+			}else{
+				cout<<"Estan mal las coordenadas"
+			}
+			
+		}else if(Yi == Yf){
+			
+			//se suma X
+			if(Xi < Xf){
+				//for 
+			}else Xi > Xf{
+				auxP = Xf;
+				Xf = Xi;
+				Xi = auxP;
+				//for
+			}else{
+				cout<<"Estan mal las coordenadas"
+			}
+		}
 		
 	}else{
 
