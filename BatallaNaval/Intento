@@ -1,0 +1,106 @@
+#include <iostream>
+#include <ctime>
+#include <stdio.h>
+#include <stdlib.h> 
+#include <time.h> 
+using namespace std;
+
+class Batalla{
+public:
+	Batalla();
+	void Limpiar();
+	void MostrarBarcos();
+	void MostrarDisparos();
+	int NumerosBarcos();
+	void PonerBarcos();
+	bool Disparar(int, int);
+
+private:
+	int TableroBarcos[10][10];
+	int TableroDisparos[10][10];
+	int x;
+	int y;
+};
+
+void Batalla::Limpiar(){
+	for(int i=0; i < 10; i++){
+         for(int j=0; j < 10; j++){
+            TableroBarcos[i][j] = 0;
+        }
+    }
+}
+
+void Batalla::MostrarBarcos(){
+	for(int i=0; i < 10; i++){
+         for(int j=0; j < 10; j++){
+            cout << TableroBarcos[i][j] << " ";
+        }
+        cout << endl;      
+	}
+}
+
+void Batalla::MostrarDisparos(){
+	for(int i=0; i < 10; i++){
+         for(int j=0; j < 10; j++){
+            cout << TableroDisparos[i][j] << " ";
+        }
+        cout << endl;      
+	}
+}
+
+int Batalla::NumerosBarcos(){
+	int c = 0;
+    for(int i=0; i < 10; i++){
+        for(int j=0; j < 10; j++){
+            if(TableroBarcos[i][j] == 1)
+            c++;
+        }
+    }
+    return c;
+}
+
+void Batalla::PonerBarcos(){
+	int s = 0;
+    while(s < 10){
+        int x = rand() % 10;
+        int y = rand() % 10;
+        if(TableroBarcos[x][y] != 1){
+            s++;
+            TableroBarcos[x][y] = 1;
+        }
+    }
+}
+
+bool Batalla::Disparar(int x,int y){
+	if(TableroBarcos[x][y] == 1){
+        TableroBarcos[x][y] = 2;
+        return true;
+    }
+    return false;
+}
+
+int main(){
+	Batalla a;
+    srand(time(NULL));
+    a.Limpiar();
+    a.PonerBarcos();
+    int pos1,pos2;
+    char prompt;
+        while(1){
+			a.MostrarDisparos();
+            cout << "Poner las coordenadas del Disparo: "; cin >> pos1 >> pos2;
+            if(a.Disparar(pos1,pos2)){
+                cout << "Has derivado un barco" << endl;}
+            else
+                cout << "No hay barcos en estas coordenadas" << endl;
+            cout << "Numero de barcos faltantes: " << a.NumerosBarcos() << endl;
+            cout << "Quieres rendirte? (s/n) "; cin >> prompt;
+            if(prompt == 's')
+                break;
+				
+        }
+    cout << "Game over!" << endl;
+    a.MostrarBarcos();
+    system("pause");
+    return 0;
+}
