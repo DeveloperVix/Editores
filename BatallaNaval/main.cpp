@@ -1,5 +1,6 @@
 #include<iostream>
 #include "Jugador.cpp"
+#include "Tablero.cpp"
 #include <stdlib.h>
 using namespace std;
 
