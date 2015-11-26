@@ -10,9 +10,9 @@ public:
 	void Mensajes(int);//Manda mensajes de lo que se ha hecho
 	void setBarcosPosicion();//Colocar los barcos en el tablero en base a coordenadas introducidas por el jugador
 	void VerificarMovimiento(int,int);//Introduce coordenadas y se verifica si se le dio a un barco
+	void VerTablero();//funcion para ver el tablero, opcional
 	void setScore(int);
 	int getScore();
-	
 	
 private:
 
@@ -22,11 +22,21 @@ private:
 };
 
 Tablero::Tablero(){
+	score = 0;
 	int i,j;
 	for(i = 0; i < 10; i++){
 		for(j = 0; j < 10; j++){
 			tablero[i][j] = 0;
 		}
+	}
+}
+
+void Tablero::VerTablero(){
+	for(i = 0; i < 10; i++){
+		for(j = 0; j < 10; j++){
+			cout<<tablero[i][j]<<"";
+		}
+		cout<<"\n";
 	}
 }
 
@@ -153,15 +163,14 @@ void Tablero::setBarcosPosicion(){
 		Mensajes(6);
 	}
 	
+	VerTablero();
 	
-	for(i = 0; i < 10; i++){
-		for(j = 0; j < 10; j++){
-			cout<<tablero[i][j]<<"";
-		}
-		cout<<"\n";
-	}
 }
 
+void Tablero::VerificarMovimiento(int x, int y){
+	
+}
+//Main temporal
 int main(){
 	Tablero tab;
 	tab.setBarcosPosicion();
