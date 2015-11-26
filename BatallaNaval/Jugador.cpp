@@ -2,11 +2,12 @@
 #include <iostream>
 #include <string>
 #include <stdio.h>
+#include "Tablero.cpp"
 
 using namespace std;
 
 //clase jugador (Nombre, Score, #Barco)
-class Jugador{
+class Jugador:public Tablero{
 private:
 	string nombre;
 	int score;
