@@ -7,22 +7,18 @@ class Tablero{
 public:
 	
 	Tablero();
-	void Mensajes(int);//Manda mensajes de lo que se ha hecho
-	void setBarcosPosicion();//Colocar los barcos en el tablero en base a coordenadas introducidas por el jugador
-	void VerificarMovimiento(int,int);//Introduce coordenadas y se verifica si se le dio a un barco
-	void VerTablero();//funcion para ver el tablero, opcional
-	void setScore(int);
-	int getScore();
+	void Mensajes(int);					//Manda mensajes de lo que se ha hecho
+	void setBarcosPosicion();			//Colocar los barcos en el tablero en base a coordenadas introducidas por el jugador
+	void VerTablero();					//funcion para ver el tablero, opcional
+
 	
 private:
 
 	int tablero[10][10];//tablero
-	int score;
 	
 };
 
 Tablero::Tablero(){
-	score = 0;
 	int i,j;
 	for(i = 0; i < 10; i++){
 		for(j = 0; j < 10; j++){
@@ -32,20 +28,14 @@ Tablero::Tablero(){
 }
 
 void Tablero::VerTablero(){
+	cout<<"   0"<<"123456789"<<endl;
+	int i,j;
 	for(i = 0; i < 10; i++){
 		for(j = 0; j < 10; j++){
-			cout<<tablero[i][j]<<"";
+			cout<<i<<"   "<<tablero[i][j]<<"";
 		}
 		cout<<"\n";
 	}
-}
-
-void Tablero::setScore(int nScore){
-	score = nScore;
-}
-
-int Tablero::getScore(){
-	return score;
 }
 
 void Tablero::Mensajes(int opcion){
@@ -71,12 +61,14 @@ void Tablero::Mensajes(int opcion){
 	case 7:
 		cout<<"Estan mal las coordenadas"<<endl;
 		break;
+	case 8:
+		cout<<"Debes introducir coordenadas entre el 0 a 9"<<endl;
 		
 	}
 }
 
 void Tablero::setBarcosPosicion(){
-	int tamanioBarco = 0, Xi = 0, Yi = 0, Xf = 0, Yf = 0, auxP = 0, i,j;
+	int tamanioBarco = 0, Xi = 0, Yi = 0, Xf = 0, Yf = 0, auxP = 0, i;
 	cout<<"Tamanio del barco: "<<endl;
 	cin>>tamanioBarco;
 	
@@ -84,13 +76,32 @@ void Tablero::setBarcosPosicion(){
 		
 		cout<<"Coordenada inicial X:"<<endl;
 		cin>>Xi;
+		if(Xi > 9 || Xi < 0){
+			Mensajes(8);
+			setBarcosPosicion();
+		}
+		
 		cout<<"Coordenada inicial Y:"<<endl;
 		cin>>Yi;
+		if(Yi > 9 || Yi < 0){
+			Mensajes(8);
+			setBarcosPosicion();
+		}
+		
 		cout<<"Coordenada final X:"<<endl;
 		cin>>Xf;
+		if(Xf > 9 || Xf < 0){
+			Mensajes(8);
+			setBarcosPosicion();
+		}
+		
 		cout<<"Coordenada final Y:"<<endl;
 		cin>>Yf;
-
+		if(Yf > 9 || Yf < 0){
+			Mensajes(8);
+			setBarcosPosicion();
+		}
+		
 		
 		if(Xi == Xf){
 			
@@ -167,9 +178,7 @@ void Tablero::setBarcosPosicion(){
 	
 }
 
-void Tablero::VerificarMovimiento(int x, int y){
-	
-}
+
 //Main temporal
 int main(){
 	Tablero tab;
