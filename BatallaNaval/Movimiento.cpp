@@ -11,6 +11,7 @@ public:
 	void MostrarBarcos();
 	void MostrarDisparos();
 	int NumerosBarcos();
+	void menuJuego();
 
 private:
 	int TableroDisparos[10][10];
@@ -51,4 +52,22 @@ int Batalla::NumerosBarcos(){//aqui mostraria el numero de casillas que tienen b
         }
     }
     return c;
+}
+
+void Batalla::menuJuego(){
+	int n;
+	verTablero();
+	cout<<"¡Preparate para la batalla!"<<endl;
+	cout<<"1. Atacar" <<endl;
+	cout<<"2. Rendirte"<<endl;
+	cin>> n;
+	
+	switch(n){
+	case 1:				
+		Disparar()
+		menuJuego();
+		break;
+	case 2:
+		menuInicial();
+		break;
 }
